@@ -1,5 +1,5 @@
 import ajax from './ajax'
-const BASE_URL = 'http://localhost:3000'
+const BASE_URL = 'http://152.136.137.112:3000'
 const MAIN_API = '/api'
 const MAIN_ADD = '/add'
 const MAIN_SEARCH = '/search'
