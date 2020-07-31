@@ -48,7 +48,7 @@ axios.interceptors.response.use(
                     // console.log(error.response)
             }
         }
-        return Promise.reject(error.response.data) // 返回接口返回的错误信息
+        return Promise.reject(error.response) // 返回接口返回的错误信息
     });
 
 export default axios

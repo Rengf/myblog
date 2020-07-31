@@ -36,7 +36,6 @@ export default {
   top: 0px;
   left: 0px;
   bottom: 0px;
-  background: #bac15a;
   z-index: 0;
   .siderList {
     width: 100%;

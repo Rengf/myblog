@@ -1,5 +1,6 @@
 import ajax from './ajax'
-const BASE_URL = 'http://152.136.137.112:3000'
+// const BASE_URL = 'http://152.136.137.112:3000'
+const BASE_URL = "http://localhost:3000"
 const MAIN_API = '/api'
 const MAIN_ADD = '/add'
 const MAIN_SEARCH = '/search'
@@ -32,6 +33,11 @@ export const getUserInfo = (data) => ajax(BASE_URL + MAIN_USER + '/', {
     data
 }, 'GET')
 
+//获取用户列表
+export const getUserList = (data) => ajax(BASE_URL + MAIN_SEARCH + '/getuserlist', {
+    data
+}, 'POST')
+
 //添加文章
 export const addArticle = (data) => ajax(BASE_URL + MAIN_ADD + '/addarticle', {
     data
@@ -47,3 +53,6 @@ export const getArticle = (data) => ajax(BASE_URL + MAIN_SEARCH + '/getarticle',
 
 //获取最新文章列表
 export const getNewArticleList = () => ajax(BASE_URL + MAIN_SEARCH + '/getnewarticlelist', {}, 'GET')
+
+//获取类别
+export const getCategory = (data) => ajax(BASE_URL + MAIN_SEARCH + '/getcategory', data, 'GET')

@@ -19,6 +19,13 @@ const routes = [{
       meta: {
         title: "文章详情"
       }
+    }, {
+      path: '/category',
+      name: 'Category',
+      component: () => import('../views/global/category/index.vue'),
+      meta: {
+        title: "文章详情"
+      }
     }]
   },
   {
@@ -57,11 +64,25 @@ const routes = [{
         title: "添加分类"
       }
     }, {
+      path: '/admin/userlist',
+      name: 'UserList',
+      component: () => import('../views/admin/userlist/index.vue'),
+      meta: {
+        title: "用户管理"
+      }
+    }, {
       path: '/admin/addarticle',
       name: 'AddArticle',
       component: () => import('../views/admin/addarticle/index.vue'),
       meta: {
         title: "添加文章"
+      }
+    }, {
+      path: '/admin/articlelist',
+      name: 'ArticleList',
+      component: () => import('../views/admin/articlelist/index.vue'),
+      meta: {
+        title: "文章管理"
       }
     }]
   }
@@ -70,7 +91,14 @@ const routes = [{
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
+  scrollBehavior() {
+
+    return {
+      x: 0,
+      y: 0
+    }
+  }
 })
 
 

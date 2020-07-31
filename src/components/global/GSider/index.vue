@@ -11,7 +11,7 @@
         <ul class="listBox">
           <li class="list" v-for="(category,index) in category_list" :key="index">
             <span class="iconfont">&#xe684;</span>
-            <router-link :to="'/articlelist?id='+category._id">{{category.category_name}}</router-link>
+            <router-link :to="'/category?id='+category._id">{{category.category_name}}</router-link>
           </li>
         </ul>
       </div>

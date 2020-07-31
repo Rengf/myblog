@@ -2,6 +2,12 @@ export default {
     user_info(state) {
         return state.user_info
     },
+    user_list(state) {
+        return state.user_list.userlist
+    },
+    user_count(state) {
+        return state.user_list.count
+    },
     category_list(state) {
         return state.category_list.categorylist
     },
@@ -20,4 +26,7 @@ export default {
     new_article_list(state) {
         return state.new_article_list
     },
+    category(state) {
+        return state.category.category
+    }
 }

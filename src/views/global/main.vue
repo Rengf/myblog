@@ -25,29 +25,34 @@
         <router-link :to="'/article?id='+article._id">更多内容</router-link>
       </div>
     </div>
+    <Pages :dataTotal="article_count" @pagechange="setpage"></Pages>
   </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
 import GArticle from "../../components/public/makehtml";
+import Pages from "../../components/public/pages";
 export default {
   data() {
     return {};
   },
   computed: {
-    ...mapGetters(["article_list"])
+    ...mapGetters(["article_list", "article_count"])
   },
   created() {
     this.getArticleList();
   },
   methods: {
-    getArticleList() {
-      var data = { page: 1, limit: 5 };
+    getArticleList(page = 1, limit = 5) {
+      var data = { page: page, limit: limit };
       this.$store.dispatch("getArticleList", data);
+    },
+    setpage(page, limit) {
+      this.getArticleList(page + 1, limit);
     }
   },
-  components: { GArticle }
+  components: { GArticle, Pages }
 };
 </script>
 

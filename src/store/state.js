@@ -4,4 +4,6 @@ export default {
     article_list: [],
     article: {},
     new_article_list: [],
+    user_list: [],
+    category: {}
 }
